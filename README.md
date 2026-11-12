@@ -29,7 +29,7 @@ Kenyan loans. This repository builds:
 │   ├── 03_regression.ipynb             ← Task 1: OLS/Ridge/Lasso derivation, 7 models, residual diagnostics
 │   └── 04_transfer_and_fairness.ipynb  ← Part C transfer, Part D fairness/proxy/mitigation/model card/regulation,
 │                                          Findex, borrower explainer, Part E scoring service (parity + latency)
-├── docs/                     ← variable definitions, EDA report
+├── docs/                     ← EDA report (PROSIT2_EDA_Report.pdf)
 ├── eda/                      ← stand-alone EDA script and figures behind docs/PROSIT2_EDA_Report.pdf
 └── outputs/                  ← created by the notebooks (git-ignored): checkpoints, results, plots, reports
 ```
@@ -91,7 +91,7 @@ Every notebook starts with a **Colab setup cell** (it does nothing locally). One
 
 1. In Google Drive create the folder `MyDrive/MLE Prosit 2/data/` and upload `Train.csv`, `Test.csv`,
    `economic_indicators.csv` and `micro_gha.csv`. (Different folder? Edit `DRIVE_DIR` in the setup cell.)
-2. Open a notebook in Colab: *File → Open notebook → GitHub*, paste `1realMicheal/MLE-PROSIT-2`, pick e.g.
+2. Open a notebook in Colab: *File → Open notebook → GitHub*, paste `isanamoa/MLE-PROSIT-2`, pick e.g.
    `notebooks/01_eda.ipynb`.
 3. Run the setup cell first, then *Runtime → Run all*. It mounts Drive, clones the repo, installs the libraries Colab lacks
    (imbalanced-learn, lightgbm, xgboost, shap, fairlearn) without touching Colab's numpy/pandas/scikit-learn (so no restart),
