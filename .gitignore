@@ -1,0 +1,25 @@
+# environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# generated outputs (re-created by running the notebooks)
+outputs/
+outputs_fast/
+research_outputs/
+notebooks_fast_tmp/
+catboost_info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+outputs_archive_macro_run/
+outputs_archive_run2_nomacro_isotonic/
+.venv_colabtest/
+
+# data: Zindi competition files and World Bank Findex microdata are not redistributed (see README)
+data/

@@ -1,0 +1,866 @@
+{
+ "train_shape": [
+  68654,
+  16
+ ],
+ "test_shape": [
+  18594,
+  15
+ ],
+ "n_default": 1258,
+ "default_rate": 0.0183237684621435,
+ "missing_train": 0,
+ "missing_test": 0,
+ "dup_rows_train": 0,
+ "dup_ids_train": 0,
+ "test_by_country": {
+  "Kenya": 15069,
+  "Ghana": 3525
+ },
+ "train_dates": [
+  "2021-10-04",
+  "2024-11-14"
+ ],
+ "test_dates": {
+  "Ghana": [
+   "2021-11-30",
+   "2023-03-21"
+  ],
+  "Kenya": [
+   "2021-11-08",
+   "2024-11-14"
+  ]
+ },
+ "dq": {
+  "repay_lt_amount": 72,
+  "repay_zero": 3,
+  "lender_portion_gt1": 1,
+  "lender_funded_zero": 8520,
+  "duration_mismatch": 0,
+  "duration_mismatch_pct": 0.0,
+  "amount_lt_100": 33,
+  "fee_rate_median": 0.008156961552818198,
+  "fee_rate_p90": 0.0372492836676217,
+  "fee_rate_mean_default": 0.22062668599946045,
+  "fee_rate_mean_repaid": 0.007609894853156218,
+  "repay_zero_default_rate": 0.0
+ },
+ "numeric_summary": [
+  {
+   "col": "Total_Amount",
+   "count": 68654.0,
+   "mean": 14836.829,
+   "std": 141649.868,
+   "min": 2.0,
+   "50%": 5249.0,
+   "99%": 119411.0,
+   "max": 23000000.0,
+   "skew": 103.828,
+   "skew_log1p": 0.139
+  },
+  {
+   "col": "Total_Amount_to_Repay",
+   "count": 68654.0,
+   "mean": 15639.93,
+   "std": 165078.353,
+   "min": 0.0,
+   "50%": 5325.0,
+   "99%": 122836.33,
+   "max": 25415000.0,
+   "skew": 104.579,
+   "skew_log1p": 0.147
+  },
+  {
+   "col": "duration",
+   "count": 68654.0,
+   "mean": 8.545,
+   "std": 13.343,
+   "min": 1.0,
+   "50%": 7.0,
+   "99%": 45.0,
+   "max": 1096.0,
+   "skew": 34.059,
+   "skew_log1p": 5.789
+  },
+  {
+   "col": "Amount_Funded_By_Lender",
+   "count": 68654.0,
+   "mean": 2545.663,
+   "std": 11922.724,
+   "min": 0.0,
+   "50%": 915.0,
+   "99%": 24755.928,
+   "max": 1600000.0,
+   "skew": 61.064,
+   "skew_log1p": -1.19
+  },
+  {
+   "col": "Lender_portion_Funded",
+   "count": 68654.0,
+   "mean": 0.219,
+   "std": 0.13,
+   "min": 0.0,
+   "50%": 0.3,
+   "99%": 0.372,
+   "max": 1.168,
+   "skew": -0.212,
+   "skew_log1p": -0.63
+  },
+  {
+   "col": "Lender_portion_to_be_repaid",
+   "count": 68654.0,
+   "mean": 2652.621,
+   "std": 13380.064,
+   "min": 0.0,
+   "50%": 934.0,
+   "99%": 25796.0,
+   "max": 1821338.0,
+   "skew": 63.198,
+   "skew_log1p": -1.19
+  }
+ ],
+ "cardinality": [
+  {
+   "col": "customer_id",
+   "train_unique": 6540,
+   "test_unique": 4962,
+   "unseen_in_test": 656,
+   "top_share": 0.00302968508754042
+  },
+  {
+   "col": "tbl_loan_id",
+   "train_unique": 66520,
+   "test_unique": 17067,
+   "unseen_in_test": 16147,
+   "top_share": 2.9131587380196348e-05
+  },
+  {
+   "col": "lender_id",
+   "train_unique": 4,
+   "test_unique": 8,
+   "unseen_in_test": 4,
+   "top_share": 0.9417222594459173
+  },
+  {
+   "col": "loan_type",
+   "train_unique": 22,
+   "test_unique": 22,
+   "unseen_in_test": 2,
+   "top_share": 0.8990444839339296
+  },
+  {
+   "col": "country_id",
+   "train_unique": 1,
+   "test_unique": 2,
+   "unseen_in_test": 1,
+   "top_share": 1.0
+  },
+  {
+   "col": "New_versus_Repeat",
+   "train_unique": 2,
+   "test_unique": 2,
+   "unseen_in_test": 0,
+   "top_share": 0.9917411949777143
+  },
+  {
+   "col": "duration",
+   "train_unique": 64,
+   "test_unique": 50,
+   "unseen_in_test": 5,
+   "top_share": 0.9463833134267486
+  }
+ ],
+ "unseen_loan_types": [
+  "Type_3",
+  "Type_8"
+ ],
+ "unseen_lenders": [
+  296540,
+  296542,
+  297182,
+  297183
+ ],
+ "overlap_customers": 4306,
+ "overlap_loans": 920,
+ "n_customers_train": 6540,
+ "n_loanid_train": 66520,
+ "loans_per_customer": {
+  "median": 6.0,
+  "mean": 10.497553516819572,
+  "p90": 25.0,
+  "max": 208,
+  "single_loan_customers_pct": 0.1853211009174312
+ },
+ "loan_ids_multi_rows": 2134,
+ "customers_ever_default": 1016,
+ "defaults_from_repeat_defaulters_pct": 0.3600953895071542,
+ "mean_default_rate_within_defaulters": 0.5508124087834326,
+ "test_rows_with_known_customer": 14831,
+ "test_rows_with_known_customer_by_country": {
+  "Kenya": 14831
+ },
+ "rate_loan_type": [
+  {
+   "loan_type": "Type_1",
+   "mean": 0.0084,
+   "count": 61723,
+   "sum": 520
+  },
+  {
+   "loan_type": "Type_7",
+   "mean": 0.0842,
+   "count": 2790,
+   "sum": 235
+  },
+  {
+   "loan_type": "Type_5",
+   "mean": 0.0802,
+   "count": 1521,
+   "sum": 122
+  },
+  {
+   "loan_type": "Type_4",
+   "mean": 0.1231,
+   "count": 1235,
+   "sum": 152
+  },
+  {
+   "loan_type": "Type_10",
+   "mean": 0.0258,
+   "count": 466,
+   "sum": 12
+  },
+  {
+   "loan_type": "Type_6",
+   "mean": 0.1064,
+   "count": 357,
+   "sum": 38
+  },
+  {
+   "loan_type": "Type_9",
+   "mean": 0.1756,
+   "count": 205,
+   "sum": 36
+  },
+  {
+   "loan_type": "Type_14",
+   "mean": 0.7172,
+   "count": 99,
+   "sum": 71
+  },
+  {
+   "loan_type": "Type_2",
+   "mean": 0.6081,
+   "count": 74,
+   "sum": 45
+  },
+  {
+   "loan_type": "Type_11",
+   "mean": 0.0476,
+   "count": 42,
+   "sum": 2
+  },
+  {
+   "loan_type": "Type_18",
+   "mean": 0.0333,
+   "count": 30,
+   "sum": 1
+  },
+  {
+   "loan_type": "Type_17",
+   "mean": 0.0,
+   "count": 23,
+   "sum": 0
+  },
+  {
+   "loan_type": "Type_12",
+   "mean": 0.0476,
+   "count": 21,
+   "sum": 1
+  },
+  {
+   "loan_type": "Type_23",
+   "mean": 0.7222,
+   "count": 18,
+   "sum": 13
+  },
+  {
+   "loan_type": "Type_20",
+   "mean": 0.5385,
+   "count": 13,
+   "sum": 7
+  },
+  {
+   "loan_type": "Type_16",
+   "mean": 0.0,
+   "count": 12,
+   "sum": 0
+  },
+  {
+   "loan_type": "Type_13",
+   "mean": 0.0,
+   "count": 10,
+   "sum": 0
+  },
+  {
+   "loan_type": "Type_15",
+   "mean": 0.75,
+   "count": 4,
+   "sum": 3
+  },
+  {
+   "loan_type": "Type_19",
+   "mean": 0.0,
+   "count": 4,
+   "sum": 0
+  },
+  {
+   "loan_type": "Type_21",
+   "mean": 0.0,
+   "count": 3,
+   "sum": 0
+  },
+  {
+   "loan_type": "Type_24",
+   "mean": 0.0,
+   "count": 3,
+   "sum": 0
+  },
+  {
+   "loan_type": "Type_22",
+   "mean": 0.0,
+   "count": 1,
+   "sum": 0
+  }
+ ],
+ "rate_lender": [
+  {
+   "lender_id": 267278,
+   "mean": 0.0121,
+   "count": 64653,
+   "sum": 784
+  },
+  {
+   "lender_id": 251804,
+   "mean": 0.0892,
+   "count": 3542,
+   "sum": 316
+  },
+  {
+   "lender_id": 267277,
+   "mean": 0.2952,
+   "count": 271,
+   "sum": 80
+  },
+  {
+   "lender_id": 245684,
+   "mean": 0.4149,
+   "count": 188,
+   "sum": 78
+  }
+ ],
+ "rate_tenure": [
+  {
+   "New_versus_Repeat": "Repeat Loan",
+   "mean": 0.0167,
+   "count": 68087,
+   "sum": 1139
+  },
+  {
+   "New_versus_Repeat": "New Loan",
+   "mean": 0.2099,
+   "count": 567,
+   "sum": 119
+  }
+ ],
+ "rate_duration_band": [
+  {
+   "dur_band": "<=7",
+   "mean": 0.0122,
+   "count": 65041,
+   "sum": 791
+  },
+  {
+   "dur_band": "8-14",
+   "mean": 0.0821,
+   "count": 1572,
+   "sum": 129
+  },
+  {
+   "dur_band": "15-30",
+   "mean": 0.1325,
+   "count": 1147,
+   "sum": 152
+  },
+  {
+   "dur_band": "31-60",
+   "mean": 0.1085,
+   "count": 461,
+   "sum": 50
+  },
+  {
+   "dur_band": "61-90",
+   "mean": 0.242,
+   "count": 281,
+   "sum": 68
+  },
+  {
+   "dur_band": ">90",
+   "mean": 0.4474,
+   "count": 152,
+   "sum": 68
+  }
+ ],
+ "rate_amount_decile": [
+  {
+   "amt_band": "(1.999, 1069.0]",
+   "mean": 0.01,
+   "count": 6871,
+   "sum": 69
+  },
+  {
+   "amt_band": "(1069.0, 1950.0]",
+   "mean": 0.0191,
+   "count": 6901,
+   "sum": 132
+  },
+  {
+   "amt_band": "(1950.0, 2729.0]",
+   "mean": 0.0076,
+   "count": 6839,
+   "sum": 52
+  },
+  {
+   "amt_band": "(2729.0, 4165.0]",
+   "mean": 0.0086,
+   "count": 6855,
+   "sum": 59
+  },
+  {
+   "amt_band": "(4165.0, 5249.0]",
+   "mean": 0.0233,
+   "count": 6866,
+   "sum": 160
+  },
+  {
+   "amt_band": "(5249.0, 7000.0]",
+   "mean": 0.012,
+   "count": 6978,
+   "sum": 84
+  },
+  {
+   "amt_band": "(7000.0, 9773.0]",
+   "mean": 0.0127,
+   "count": 6750,
+   "sum": 86
+  },
+  {
+   "amt_band": "(9773.0, 14178.2]",
+   "mean": 0.0249,
+   "count": 6863,
+   "sum": 171
+  },
+  {
+   "amt_band": "(14178.2, 25051.4]",
+   "mean": 0.0188,
+   "count": 6865,
+   "sum": 129
+  },
+  {
+   "amt_band": "(25051.4, 23000000.0]",
+   "mean": 0.046,
+   "count": 6866,
+   "sum": 316
+  }
+ ],
+ "monthly": {
+  "min_rate": 0.0,
+  "max_rate": 0.7368421052631579,
+  "peak_month": "2022-09",
+  "n_months": 38
+ },
+ "rate_by_year": [
+  {
+   "year": 2021,
+   "mean": 0.5385,
+   "count": 39
+  },
+  {
+   "year": 2022,
+   "mean": 0.013,
+   "count": 64405
+  },
+  {
+   "year": 2023,
+   "mean": 0.1153,
+   "count": 1240
+  },
+  {
+   "year": 2024,
+   "mean": 0.0869,
+   "count": 2970
+  }
+ ],
+ "dow_rate_range": [
+  0.013187670698400312,
+  0.03759398496240601
+ ],
+ "rate_prior_loans": [
+  {
+   "pl_band": "0",
+   "mean": 0.0606,
+   "count": 6540
+  },
+  {
+   "pl_band": "1-2",
+   "mean": 0.0342,
+   "count": 9943
+  },
+  {
+   "pl_band": "3-5",
+   "mean": 0.0172,
+   "count": 11460
+  },
+  {
+   "pl_band": "6-10",
+   "mean": 0.0114,
+   "count": 13561
+  },
+  {
+   "pl_band": "11-25",
+   "mean": 0.0086,
+   "count": 17820
+  },
+  {
+   "pl_band": ">25",
+   "mean": 0.0017,
+   "count": 9330
+  }
+ ],
+ "rate_prior_default": [
+  {
+   "had": "Had prior default",
+   "mean": 0.6096,
+   "count": 397
+  },
+  {
+   "had": "No prior default",
+   "mean": 0.0149,
+   "count": 68257
+  }
+ ],
+ "ghana": {
+  "loan_type": {
+   "Type_3": 0.8621,
+   "Type_2": 0.1274,
+   "Type_8": 0.0105
+  },
+  "lender": {
+   "296542": 0.5115,
+   "297183": 0.3586,
+   "296540": 0.0508,
+   "297182": 0.0462,
+   "245684": 0.0329
+  },
+  "duration": {
+   "7": 0.8621,
+   "180": 0.0817,
+   "365": 0.0145,
+   "240": 0.0111,
+   "300": 0.0105,
+   "210": 0.0074,
+   "150": 0.0054,
+   "360": 0.0026
+  },
+  "amount_median": 3001.94,
+  "amount_mean": 15536.916031205676,
+  "fee_rate_median": 0.030000256193477348,
+  "new_share": 0.018439716312056736,
+  "known_customers": 0
+ },
+ "kenya_test": {
+  "amount_median": 5149.0,
+  "new_share": 0.006901586037560555
+ },
+ "kenya_train": {
+  "amount_median": 5249.0,
+  "new_share": 0.008258805022285664,
+  "fee_rate_median": 0.008156961552818198
+ },
+ "domain_auc": 0.9999922109256222,
+ "domain_auc_no_amount": 0.9999878308878586,
+ "domain_auc_minimal": 0.9968295618359324,
+ "ghana_rows_unseen_type": 0.8726241134751773,
+ "ghana_rows_unseen_lender": 0.9670921985815603,
+ "ghana_rows_unseen_type_or_lender": 0.9670921985815603,
+ "fee_rate_bins": [
+  {
+   "band": "<=0",
+   "repaid": 24135,
+   "default": 1,
+   "rate": 4.143188597944978e-05
+  },
+  {
+   "band": "0-1%",
+   "repaid": 11238,
+   "default": 4,
+   "rate": 0.0003558085749866572
+  },
+  {
+   "band": "1-5%",
+   "repaid": 28323,
+   "default": 80,
+   "rate": 0.0028166038798718446
+  },
+  {
+   "band": "5-10%",
+   "repaid": 2856,
+   "default": 214,
+   "rate": 0.06970684039087947
+  },
+  {
+   "band": "10-20%",
+   "repaid": 622,
+   "default": 302,
+   "rate": 0.3268398268398268
+  },
+  {
+   "band": "20-50%",
+   "repaid": 175,
+   "default": 408,
+   "rate": 0.6998284734133791
+  },
+  {
+   "band": ">50%",
+   "repaid": 47,
+   "default": 249,
+   "rate": 0.8412162162162162
+  }
+ ],
+ "iw_ess_pct": 3.83391371865818e-05,
+ "iw_share_weight_top1pct": 0.9988660528651292,
+ "macro_indicators": [
+  "Inflation, consumer prices (annual %)",
+  "Official exchange rate (LCU per US$, period average)",
+  "Real interest rate (%)",
+  "Average precipitation in depth (mm per year)",
+  "Deposit interest rate (%)",
+  "Lending interest rate (%)",
+  "Interest rate spread (lending rate minus deposit rate, %)",
+  "Fossil fuel energy consumption (% of total)",
+  "Unemployment rate"
+ ],
+ "macro_missing_cells": 142,
+ "macro_recent": {
+  "Average precipitation in depth (mm per year) | Ghana": {
+   "2019": 1187.0,
+   "2020": 1187.0,
+   "2021": 1187.0,
+   "2022": null,
+   "2023": null
+  },
+  "Average precipitation in depth (mm per year) | Kenya": {
+   "2019": 630.0,
+   "2020": 630.0,
+   "2021": 630.0,
+   "2022": null,
+   "2023": null
+  },
+  "Deposit interest rate (%) | Ghana": {
+   "2019": 11.5,
+   "2020": 11.5,
+   "2021": 11.5,
+   "2022": 12.05,
+   "2023": 11.42
+  },
+  "Deposit interest rate (%) | Kenya": {
+   "2019": 7.51,
+   "2020": 6.97,
+   "2021": 6.69,
+   "2022": 7.15,
+   "2023": 9.17
+  },
+  "Inflation, consumer prices (annual %) | Ghana": {
+   "2019": 7.14,
+   "2020": 9.89,
+   "2021": 9.97,
+   "2022": 31.26,
+   "2023": 38.11
+  },
+  "Inflation, consumer prices (annual %) | Kenya": {
+   "2019": 5.24,
+   "2020": 5.41,
+   "2021": 6.11,
+   "2022": 7.66,
+   "2023": 7.67
+  },
+  "Interest rate spread (lending rate minus deposit rate, %) | Kenya": {
+   "2019": 4.94,
+   "2020": 5.03,
+   "2021": 5.39,
+   "2022": 5.19,
+   "2023": 4.42
+  },
+  "Lending interest rate (%) | Kenya": {
+   "2019": 12.44,
+   "2020": 12.0,
+   "2021": 12.08,
+   "2022": 12.34,
+   "2023": 13.59
+  },
+  "Official exchange rate (LCU per US$, period average) | Ghana": {
+   "2019": 5.22,
+   "2020": 5.6,
+   "2021": 5.81,
+   "2022": 8.27,
+   "2023": 11.02
+  },
+  "Official exchange rate (LCU per US$, period average) | Kenya": {
+   "2019": 101.99,
+   "2020": 106.45,
+   "2021": 109.64,
+   "2022": 117.87,
+   "2023": 139.85
+  },
+  "Real interest rate (%) | Kenya": {
+   "2019": 7.83,
+   "2020": 6.71,
+   "2021": 7.43,
+   "2022": 5.97,
+   "2023": 6.55
+  },
+  "Unemployment rate | Ghana": {
+   "2019": 3.16,
+   "2020": 3.29,
+   "2021": 3.34,
+   "2022": 3.08,
+   "2023": 3.08
+  },
+  "Unemployment rate | Kenya": {
+   "2019": 5.01,
+   "2020": 5.62,
+   "2021": 5.69,
+   "2022": 5.8,
+   "2023": 5.68
+  }
+ },
+ "macro_last_year": 2023,
+ "univariate_auc": {
+  "Total_Amount": 0.6176,
+  "Total_Amount_to_Repay": 0.661,
+  "duration": 0.6651,
+  "Amount_Funded_By_Lender": 0.6595,
+  "Lender_portion_Funded": 0.5228,
+  "Lender_portion_to_be_repaid": 0.695,
+  "fee_rate": 0.9815,
+  "is_new": 0.544,
+  "dow": 0.5199,
+  "dom": 0.5505,
+  "lender_id": 0.6624,
+  "customer_id": 0.6113,
+  "tbl_loan_id": 0.5839
+ },
+ "corr_amount_repay": 0.9987688028339087,
+ "corr_funded_tobe": 0.9998597084197351,
+ "safe_hist": {
+  "rows_with_prior": 0.8928103242345675,
+  "rate_if_prior_default": 0.23976608187134502,
+  "rate_if_no_prior_default": 0.017770833637545082
+ },
+ "temporal_cut_date": "2022-11-02",
+ "cv_demo": [
+  {
+   "features": "Core application features",
+   "model": "LogReg (balanced)",
+   "stratified_prauc": 0.1483,
+   "stratified_auc": 0.7977,
+   "group_prauc": 0.1489,
+   "group_auc": 0.7978,
+   "temporal_prauc": 0.162,
+   "temporal_auc": 0.8131
+  },
+  {
+   "features": "Core application features",
+   "model": "HistGB (balanced)",
+   "stratified_prauc": 0.217,
+   "stratified_auc": 0.8265,
+   "group_prauc": 0.1904,
+   "group_auc": 0.8201,
+   "temporal_prauc": 0.1549,
+   "temporal_auc": 0.8039
+  },
+  {
+   "features": "+ repay-derived (suspect)",
+   "model": "LogReg (balanced)",
+   "stratified_prauc": 0.7018,
+   "stratified_auc": 0.9867,
+   "group_prauc": 0.6995,
+   "group_auc": 0.9858,
+   "temporal_prauc": 0.4851,
+   "temporal_auc": 0.9329
+  },
+  {
+   "features": "+ repay-derived (suspect)",
+   "model": "HistGB (balanced)",
+   "stratified_prauc": 0.9171,
+   "stratified_auc": 0.9956,
+   "group_prauc": 0.9042,
+   "group_auc": 0.9934,
+   "temporal_prauc": 0.6378,
+   "temporal_auc": 0.887
+  },
+  {
+   "features": "+ leaky customer target-mean",
+   "model": "LogReg (balanced)",
+   "stratified_prauc": 0.7537,
+   "stratified_auc": 0.9904,
+   "group_prauc": 0.7549,
+   "group_auc": 0.9901,
+   "temporal_prauc": 0.7401,
+   "temporal_auc": 0.9583
+  },
+  {
+   "features": "+ leaky customer target-mean",
+   "model": "HistGB (balanced)",
+   "stratified_prauc": 0.8049,
+   "stratified_auc": 0.9932,
+   "group_prauc": 0.8061,
+   "group_auc": 0.9936,
+   "temporal_prauc": 0.7547,
+   "temporal_auc": 0.9733
+  },
+  {
+   "features": "+ safe history (merge_asof)",
+   "model": "LogReg (balanced)",
+   "stratified_prauc": 0.1446,
+   "stratified_auc": 0.8473,
+   "group_prauc": 0.1448,
+   "group_auc": 0.8467,
+   "temporal_prauc": 0.122,
+   "temporal_auc": 0.8116
+  },
+  {
+   "features": "+ safe history (merge_asof)",
+   "model": "HistGB (balanced)",
+   "stratified_prauc": 0.2347,
+   "stratified_auc": 0.8822,
+   "group_prauc": 0.202,
+   "group_auc": 0.8651,
+   "temporal_prauc": 0.1611,
+   "temporal_auc": 0.8248
+  }
+ ],
+ "baseline_prauc": 0.0183237684621435,
+ "baseline_prauc_temporal": 0.038744446872041365,
+ "cost": {
+  "median_amount_kes": 5249.0,
+  "median_fee_rate": 0.008156961552818198,
+  "median_fee_kes": 33.0,
+  "median_amount_7d": 5000.0,
+  "median_fee_rate_7d": 0.007241129616220032,
+  "median_fee_rate_30d": 0.07000000000000006,
+  "default_amount_median": 9000.0,
+  "ghana_median_amount_ghs": 3001.94,
+  "ghana_median_fee_rate": 0.030000256193477348
+ }
+}
