@@ -8,6 +8,30 @@ Kenyan loans. This repository builds:
 * a **Kenya → Ghana transfer study**, a **fairness and regulatory audit**, and a **scoring service** that returns a
   decision, a limit and the top-3 plain-language reasons.
 
+## Open in Colab
+
+| Step | Notebook | | What it produces |
+|---|---|---|---|
+| 1 | `01_eda` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/isanamoa/MLE-PROSIT-2/blob/main/notebooks/01_eda.ipynb) | framing, feature audit, cost matrix, EDA (~1 min) |
+| 2 | `02_classification` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/isanamoa/MLE-PROSIT-2/blob/main/notebooks/02_classification.ipynb) | default model, test results, hand-off file for 04 (~40–60 min on free Colab) |
+| 3 | `03_regression` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/isanamoa/MLE-PROSIT-2/blob/main/notebooks/03_regression.ipynb) | limit model, hand-off file for 04 (~5–10 min) |
+| 4 | `04_transfer_and_fairness` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/isanamoa/MLE-PROSIT-2/blob/main/notebooks/04_transfer_and_fairness.ipynb) | transfer study, fairness audit, Findex, model card, scoring service (~2 min) |
+
+**Notes before you click**
+1. **Data first (once).** Upload `Train.csv`, `Test.csv`, `economic_indicators.csv` and `micro_gha.csv` to
+   `MyDrive/MLE Prosit 2/data/` in your Google Drive. The data is not in this repo (Zindi and World Bank terms).
+2. **Run the Colab setup cell first** in every notebook (the first code cell). It mounts Drive, clones this repo, installs
+   the missing libraries and points outputs at `MyDrive/MLE Prosit 2/outputs/`. Then use *Runtime → Run all*.
+3. **Run in order 01 → 02 → 03 → 04.** Each Colab notebook runs on its own machine; 04 reads the files that 02 and 03 save to
+   Drive, so it fails if they have not been run (by you, into your own Drive).
+4. **If Colab disconnects** during 02, open it again and re-run: finished experiments are reloaded from the Drive checkpoints.
+5. **Quick check instead of a full run:** add `os.environ['PROSIT2_FAST'] = '1'` at the top of the setup cell. FAST mode finishes
+   all four notebooks in about 10 minutes and writes to `outputs_fast/`, so it never mixes with real results.
+6. **Edits are not saved to GitHub automatically.** A notebook opened from a badge is a temporary copy. Use *File → Save a copy
+   in Drive* to keep your edits, or *File → Save a copy in GitHub* (authorise Colab once) to commit them to a branch.
+   Results are always saved to Drive by the setup cell, whether or not you save the notebook.
+7. **Just reviewing?** No need to run anything: every notebook on GitHub already contains its executed outputs.
+
 ## Repository layout
 
 ```
